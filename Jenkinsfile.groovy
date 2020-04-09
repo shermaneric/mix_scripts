@@ -6,7 +6,7 @@ properties( [
 timestamps {
     timeout(time: 30, unit: 'MINUTES') {
         //environment variable needs to match the Tausight github credential in http://<Jenkins instance>/credentials/
-        GIT_CREDENTIALS_ID = 'tausight-github-key-shermaneric'
+        GIT_CREDENTIALS_ID = 'jenkins_shermandemo_com_private_ssh_key'
         SLACK_CHANNEL='#jenkins'
 
         node('eric_test_node') {
@@ -14,6 +14,7 @@ timestamps {
                 stage("Prep and Checkout SCM") {
                     deleteDir() // deleteDir ensures fresh checkouts of repos each time
                     checkout scm
+                    sh "git checkout master"
                 }
                 stage("Update something") {
                     sh "echo \$(date) > myfile"
