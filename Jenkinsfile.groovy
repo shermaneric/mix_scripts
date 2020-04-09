@@ -24,7 +24,6 @@ timestamps {
                 println e
                 error()
             } finally {
-                sendSlackNotification()
             }
         }
     }
@@ -34,6 +33,8 @@ def tagAndPush() {
     sshagent (credentials: [GIT_CREDENTIALS_ID]) {
         sh('git config user.email "shermaneric@gmail.com"')
         sh('git config user.name "Eric SHerman"')
+        sh('git add --all')
+        sh("git commit -m 'test push Jenkins'")
         sh('git push')
     }
 }
