@@ -17,6 +17,7 @@ timestamps {
                 }
                 stage("Update something") {
                     sh "echo \$(date) > myfile"
+                    tagAndPush()
                 }
                 currentBuild.result = 'SUCCESS'
             } catch (e) {
