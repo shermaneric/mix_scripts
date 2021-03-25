@@ -1,0 +1,16 @@
+apiVersion: cert-manager.io/v1
+kind: Issuer
+metadata:
+  name: example-issuer
+spec:
+  acme:
+    email: shermanericdemo@gmail.com
+    privateKeySecretRef:
+         name: example-issuer
+    # The ACME server URL
+    server: https://acme-staging-v02.api.letsencrypt.org/directory
+    solvers:
+    - dns01:
+        cloudDNS:
+          # The ID of the GCP project
+          project: k8s-wildcard

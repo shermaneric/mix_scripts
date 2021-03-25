@@ -1,0 +1,12 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: shermandemowild2-com
+  #namespace: cert-manager
+spec:
+  secretName: shermandemowild2-com-tls
+  issuerRef:
+    # The issuer created previously
+    name: example-issuer
+  dnsNames:
+  - foo.shermandemogoogle.com 
