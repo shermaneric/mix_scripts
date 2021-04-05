@@ -1,12 +1,12 @@
 apiVersion: cert-manager.io/v1
-kind: Issuer
+kind: ClusterIssuer
 metadata:
-  name: example-issuer
+  name: dns-example-issuer
 spec:
   acme:
     email: shermanericdemo@gmail.com
     privateKeySecretRef:
-         name: example-issuer
+         name: dns-example-issuer
     # The ACME server URL
     server: https://acme-staging-v02.api.letsencrypt.org/directory
     solvers:

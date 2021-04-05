@@ -1,12 +1,13 @@
 apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
-  name: shermandemowild2-com
+  name: shermandemogoogle-wild
   #namespace: cert-manager
 spec:
-  secretName: shermandemowild2-com-tls
+  secretName: shermandemogoogle-wild-tls
   issuerRef:
     # The issuer created previously
-    name: example-issuer
+    name: dns-example-issuer
+    kind: ClusterIssuer
   dnsNames:
   - foo.shermandemogoogle.com 
