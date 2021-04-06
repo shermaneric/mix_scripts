@@ -1,4 +1,5 @@
 #https://cloud.google.com/kubernetes-engine/docs/concepts/ingress
+#https://blog.realkinetic.com/using-google-managed-certificates-and-identity-aware-proxy-with-gke-199a176efad9
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:

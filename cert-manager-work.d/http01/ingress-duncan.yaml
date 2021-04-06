@@ -6,7 +6,7 @@ metadata:
     kubernetes.io/ingress.class: nginx-duncan
     acme.cert-manager.io/http01-ingress-class: nginx-duncan
   name: duncan-ingress
-  namespace: miles
+  namespace: pets
 spec:
   tls:
   - hosts:
