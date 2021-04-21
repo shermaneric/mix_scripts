@@ -13,8 +13,13 @@
 ```
 helm install duncan-quickstart-nginx ingress-nginx/ingress-nginx --namespace pets --set rbac.create=true --set controller.ingressClass=nginx-duncan
 ```
+#### 2a.  EDIT:  I've since switched to using the default nginx ingress class and ingress-all.yaml so remove --set controller.ingressClass above and no need for 3.  I do this
+```
+helm install pets-quickstart-nginx ingress-nginx/ingress-nginx --namespace pets --set rbac.create=true
+```
 
-### 3. This installs a second NGINX ingress controller named max-quickstart, Ingress class "nginx-max"
+### SKIP
+##### 3. This installs a second NGINX ingress controller named max-quickstart, Ingress class "nginx-max"
 ```
  helm install max-quickstart-nginx ingress-nginx/ingress-nginx --namespace pets --set rbac.create=true --set controller.ingressClass=nginx-max
 ```
