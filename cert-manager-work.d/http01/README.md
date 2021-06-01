@@ -2,7 +2,7 @@
 
 
 ### Assumes helm is installed.  Borrowed from https://cert-manager.io/docs/tutorials/acme/ingress/
-  * Note: No more tiller needed
+  * Note: No more tiller needed.
 
 ### 1. Installs default hello world deployment and service
 ```
