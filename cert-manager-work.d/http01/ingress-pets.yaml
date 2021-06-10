@@ -1,0 +1,58 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+  name: pets-ingress
+  namespace: pets
+spec:
+  tls:
+  - hosts:
+    - pets.shermandemo.com
+    - duncan.shermandemo.com
+    - max.shermandemo.com
+    - mindy.shermandemo.com
+    - bigleta.shermandemo.com
+    secretName: pets-quickstart-tls
+  rules:
+  - host: pets.shermandemo.com
+    http:
+      paths:
+      - backend:
+          serviceName: web
+          servicePort: 80
+        path: /
+        pathType: ImplementationSpecific
+  - host: duncan.shermandemo.com
+    http:
+      paths:
+      - backend:
+          serviceName: web
+          servicePort: 80
+        path: /
+        pathType: ImplementationSpecific
+  - host: max.shermandemo.com
+    http:
+      paths:
+      - backend:
+          serviceName: web
+          servicePort: 80
+        path: /
+        pathType: ImplementationSpecific
+  - host: mindy.shermandemo.com
+    http:
+      paths:
+      - backend:
+          serviceName: web
+          servicePort: 80
+        path: /
+        pathType: ImplementationSpecific
+  - host: bigleta.shermandemo.com
+    http:
+      paths:
+      - backend:
+          serviceName: web
+          servicePort: 80
+        path: /
+        pathType: ImplementationSpecific
+ 
